@@ -112,5 +112,6 @@ function MenorNumero(array){ // Mesmo método com diferença de atribuição
 const maior90 = num.filter(filtragem);
 function filtragem (value, index, array){ //para filtrar e buscar os valores desejados
     return value > 90;
-
 }
+//Para verificar se tem o item no array
+players.includes();
