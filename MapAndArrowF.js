@@ -24,14 +24,14 @@ const novoPreco = produtos.temDesconto ? produtos.preco * 0.9 : produtos.preco;
         quantidade: produtos.quantidade
     }
 });
-console.log(novosProdutos);
+//console.log(novosProdutos);
 
 //Agora qual é o faturamento vendendo todo o estoque?
 const totalVendas = produtos.reduce((acumulador, produtos) => {
 
     return acumulador + (produtos.preco * produtos.quantidade)
 }, 0)
-console.log(totalVendas.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
+//console.log(totalVendas.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
 
 //Usando Filter para encontrar produtos com desconto
 const promocao = produtos.filter( produtos => produtos.temDesconto);
@@ -41,3 +41,9 @@ const promo = produtos.filter( produtos => !produtos.temDesconto); //Com o opera
 console.log(promo)
 
 //Adicionar + 10 em cada produto || Filtra os em promoção || Saber o faturamento dos em promoção
+const faturamentoTotal = produtos.map(produtos => {
+    return {...produtos, quantidade: produtos.quantidade + 10} // ( ... )para copiar e esparramar objeto
+
+}).filter( produtos => produtos.temDesconto).reduce((acumulador, produtos) => acumulador  + produtos.quantidade * produtos.preco, 0)
+
+console.log(faturamentoTotal.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
