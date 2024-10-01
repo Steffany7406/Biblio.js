@@ -109,10 +109,21 @@ function MenorNumero(array){ // Mesmo método com diferença de atribuição
     return Math.min.apply(null, array);
 }
 // Para Filtrar os números 
+/* = Cria um novo array filtrando os valores desejados do array original
+Três dados: Item por item do Array,
+Posição atual do array,
+Array completo
+*/
 const maior90 = num.filter(filtragem);
 function filtragem (value, index, array){ //para filtrar e buscar os valores desejados
     return value > 90;
 }
+//Outra forma! Achando pares!
+let danke = [1,2,3,4,5,6,7,8,9,10];
+const pares =  danke.filter(danke => {
+    return danke % 2 === 0
+}); console.log(pares);
+
 //Para verificar se tem o item no array
 players.includes();
 
