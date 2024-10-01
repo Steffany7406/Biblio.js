@@ -115,3 +115,89 @@ function filtragem (value, index, array){ //para filtrar e buscar os valores des
 }
 //Para verificar se tem o item no array
 players.includes();
+
+// Para Filtrar os números 
+/* = Cria um novo array filtrando os valores desejados do array original
+Três dados: Item por item do Array,
+Posição atual do array,
+Array completo
+*/
+const maior90 = num.filter(filtragem);
+function filtragem (value, index, array){ //para filtrar e buscar os valores desejados
+    return value > 90;
+}
+
+/*var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.trim().split('\n');
+Esse código lê toda a entrada da entrada padrão () e a armazena na variável. 
+Em seguida, ele corta a entrada (remove os espaços em branco à esquerda e à direita) e 
+a divide em uma matriz de linhas usando o caractere de nova linha () como separador./dev/stdininput\n
+*/
+
+//Método Split()
+people5.split() /*divide uma string em duas ou mais substrings, 
+                dependendo de um separador (ou splitter). 
+                Esse separador pode ser um único caractere, 
+                outra string ou até mesmo uma expressão regular.*/
+
+// Manipular Array
+
+// Método MAP = criar um novo array multiplicando todos os valores por 2.
+// Sempre mantendo o mesmo número de itens do primeiro
+// Mapeando item por item do array
+// E com o novo você pode alterar o que quiser em relação ao original
+const numbers = [1, 2, 3, 4, 5];
+const doubleNumbers = numbers.map(numbers => numbers * 2); //Usando a  função flexa para multiplicar os números.
+console.log(doubleNumbers);
+
+//Outras formas
+// index = pega as posições dentro do array
+const doubleNumbers2 = numeros.map((numbers, index, arrayCompleto) => {
+    return numbers * 6
+});
+console.log(doubleNumbers2);
+
+//Com banco de dados!! = Orientado a objetos
+const produtos = [
+    {id: 1, nome: "Smartphone Galaxy S21", preco: 3999.99, temDesconto: true, quantidade: 1,},
+    {id: 2, nome: "Notebook Dell Inspiration", preco: 4500.00, temDesconto: false, quantidade: 3,},
+    {id: 3, nome: "Smart TV LG 55", preco: 2799.00, temDesconto: true, quantidade: 5,},
+    {id: 4, nome: "Fone de ouvido JBL", preco: 299.90, temDesconto: false, quantidade: 2,},
+    {id: 5, nome: "Câmera DSLR Canon", preco: 3200.00, temDesconto: true, quantidade: 1,},
+    {id: 6, nome: "Tablet IPad Air", preco: 4199.00, temDesconto: false, quantidade: 8,},
+    {id: 7, nome: "Console PlayStation 5", preco: 4699.00, temDesconto: true, quantidade: 2,},
+    {id: 8, nome: "Smartwatch Apple Watch", preco: 2499.00, temDesconto: false, quantidade: 7,},
+    {id: 9, nome: "Impressora HP Multifuncional", preco: 599.90, temDesconto: true, quantidade: 5,},
+    {id: 10, nome: "Caixa de Som Portátil Sony", preco: 1000.00, temDesconto: false, quantidade: 3 }
+];
+// A necessidade aqui é criar um novo array, formatando a moeda e dando desconto aos clientes
+const novosProdutos = produtos.map( produtos => { // criando novo array com a arrow function
+
+//Se o produto tem desconto ele deve ter 10% de desconto, se não o valor permanece
+const novoPreco = produtos.temDesconto ? produtos.preco * 0.9 : produtos.preco;
+
+    return{
+        id: produtos.id,
+        nome: produtos.nome,
+        preco: novoPreco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}), //formatando o preco para exibir com virgula
+        //currency : 'BRL' para exibir o preco com moeda
+        quantidade: produtos.quantidade
+    }
+});
+console.log(novosProdutos);
+
+//Método Reduce =  é usado para reduzir um array inteiro em um único valor.
+//Ou seja, quer saber a soma de todos os valores do array
+/*
+ - Dá acesso a 4 dados:
+    - Acumulador : valor que está sendo acumulado 
+    - valor Atual  : valor que está sendo processado
+    - Posição Atual  : posição do valor que está sendo processado
+    - Array Completo  : array inteiro que está sendo processado */
+//Base
+const numeros = [1, 2, 3, 4, 5];
+const soma = numeros.reduce((acumulador, atual) => {
+    const total = acumulador + atual;
+    return total;
+});
+console.log(soma);
