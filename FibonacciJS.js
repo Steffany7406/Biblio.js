@@ -12,33 +12,14 @@ for (let count = 1; count <= 3; count++){
   numB = numC;
 } console.log(fibbi)
 
-/* 
-let quantNum = prompt("Informe o número:")
-quantNum = parseInt(quantNum) => Convertendo para int ou float
-*/ 
+function fibonacci(num) { //  Função que calcula o n-ésimo termo da sequência de Fibonacci
 
-/*let quantNum = 5;
-let termo1 = 0;
-let termo2 = 1;
-let nextTerm = 0;
+  let sequence = [0, 1];  // Inicializando a sequência com os dois primeiros termos
+  for (let i = 2; i < num; i++) {  // Loop que calcula os termos restantes da sequência
 
-console.log(termo1+"\n"+termo2);
-
-for(let i=2; i <= quantNum; i++){
-  nextTerm = termo1+termo2
-  console.log(nextTerm)
-  termo1 = termo2;
-  termo2 = nextTerm;
-}*/
-
-function fibonacci(num) {
-  let sequence = [0, 1];
-  for (let i = 2; i < num; i++) {
-      sequence[i] = sequence[i - 1] + sequence[i - 2];
+      sequence[i] = sequence[i - 1] + sequence[i - 2];   // Calcula o próximo termo como a soma dos dois anteriores
   }
-  return sequence;
+  return sequence;   // Retorna a sequência calculada
 }
-
 const num = 10; // Número de termos na sequência de Fibonacci
-console.log(fibonacci(num));
-
+console.log(fibonacci(num));  
